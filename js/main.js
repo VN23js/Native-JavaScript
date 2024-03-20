@@ -822,7 +822,7 @@ let user2 = {
 function func(phrase) {
   console.log(phrase + ", " + this.firstName);
 }
-
+//После контекста в call можно передать аргументы для функции. 
 // привязка this к user
 let funcUser = func.bind(user2);
 
@@ -903,27 +903,96 @@ function performOperation(callback) {
 // Вызов функции, передавая функцию обратного вызова в качестве аргумента
 performOperation(callbackFunction);
 */
-function greet(name) {
-  console.log("Привет, " + name + "!");
+///function greet(name) {
+// console.log("Привет, " + name + "!");
+//}
+
+//function processUserInput(callback) {
+// var name = "Evan";
+// callback(name);
+//}
+
+//processUserInput(greet);
+
+///let a = [1, 2, 3, 4];
+
+//function process(name, age, password) {
+// console.log("your datebase" + " " + name + " " + age + " " + password);
+//}
+
+//function processprocessUserInput(callback) {
+//  let name = "Evan";
+// let age = 23;
+//  let password = "<2321432>";
+/// callback(name, age, password);
+//}
+//processprocessUserInput(process);
+///Memoized
+/*
+const memo = (fn) => {
+  const cahe = {};
+  return (n) => {
+    if (n in cahe) {
+      return cahe[n];
+    }
+    return (cahe[n] = fn(n));
+  };
+};
+const factorial = memo((x) => {
+  console.log("calculating for x=" + x);
+  return !x || x === 1 ? 1 : x * factorial(x - 1);
+});
+console.log(factorial(5));
+console.log(factorial(7));
+*/
+/*
+function memo(call) {
+  const cache = {};
+  return (n) => {
+    if (n in cache) {
+      return cache[n];
+    }
+    return (cache[n] = call(n));
+  };
+}
+let a = [1, 2, 3, 4, 5];
+
+const factorial = memo((x) => {
+  return x.forEach((element) => {
+    if (element % 2 === 0) {
+      console.log(`"calculating for x="${element}`); // пример не очень но работает
+    }
+  });
+});
+
+factorial(a);
+factorial(a);
+*/
+/*
+function showFullName() {
+  console.log(this.firstName + " " + this.lastName);
 }
 
-function processUserInput(callback) {
-  var name = "Evan";
-  callback(name);
+const user2 = {
+  firstName: "Вася",
+  lastName: "Петров"
+};
+
+showFullName.call(user2);
+//При помощи call можно легко взять метод одного объекта, в том числе встроенного, и вызвать в контексте другого.
+*/
+//В этом примере мы создали класс Person с помощью функции-конструктора. Мы добавили два свойства (name и age)
+//и метод greet с использованием прототипа. Затем мы создали два экземпляра класса person1 и person2 и вызвали метод greet на каждом из них.
+//Функция Person() создает новый класс с именем Person, который может использоваться для создания объектов.
+///Параметры name и age позволяют инициализировать свойства объекта при его создании.
+function person(name, age) {
+  this.name = name;
+  this.age = age;
+
+  person.prototype.greet = function () {
+    console.log(`Hello ${this.name} ${this.age}!`);
+  };
 }
 
-processUserInput(greet);
-
-let a = [1, 2, 3, 4];
-
-function process(name, age, password) {
-  console.log("your datebase" + " " + name + " " + age + " " + password);
-}
-
-function processprocessUserInput(callback) {
-  let name = "Evan";
-  let age = 23;
-  let password = "<2321432>";
-  callback(name, age, password);
-}
-processprocessUserInput(process);
+const person1 = new person("Вася", 23);
+person1.greet();
