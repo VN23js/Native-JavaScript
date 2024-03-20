@@ -730,7 +730,7 @@ const hasEven = numbers1.some(num => num % 2 === 0);
 
 console.log(hasEven); // true, так как в массиве есть хотя бы одно четное число
 */
-
+/*
 const { error } = require("jquery");
 
 function Test(user, age) {
@@ -762,3 +762,168 @@ var jsonDate = {
 };
 
 console.log(jsonDate);
+*/
+
+const { isArray } = require("jquery");
+
+/*
+function greeting(message) {
+  return `Hello ${message}`;
+}
+
+const person = { name: "John" };
+console.log(greeting.call(person, person.name));
+
+function sum(a, b) {
+  return a + b;
+}
+const number = [2, 3];
+console.log(sum.apply(null, number));
+
+let a = [1, 2, 3];
+
+const b = Math.max.apply(Math, a);
+console.log(b);
+*/
+
+// замыкание:
+let user = {
+  firstName: "Вася",
+  sayHi() {
+    console.log(`Прив3333ет, ${this.firstName}!`);
+  }
+};
+// замыкание:
+
+/*
+setTimeout(function () {
+  user.sayHi(); // Привет, Вася!
+}, 1000);
+
+const person = {
+  name: "John",
+  age: 23,
+  greet: function () {
+    console.log(`Hello ${this.name} ${this.age} `);
+  }
+};
+
+const greetFunction = person.greet;
+greetFunction(); // Выведет "Hello, my name is undefined"
+const boundGreet = person.greet.bind(person);
+boundGreet();
+*/
+////////////////////////////////////////////////////////////////
+/*
+let user2 = {
+  firstName: "Вася"
+};
+// bind  используется для привязки функции к определенному контексту  (т.е. значению this).
+function func(phrase) {
+  console.log(phrase + ", " + this.firstName);
+}
+
+// привязка this к user
+let funcUser = func.bind(user2);
+
+funcUser("Привет"); //
+
+let user3 = {
+  firstName: "Evan",
+  sayHi(parametres) {
+    console.log(`${parametres}, ${this.firstName}!`);
+  }
+};
+
+let sayHi = user3.sayHi.bind(user3);
+
+sayHi("пРИВЕТ");
+///////////////////////////////
+*/
+
+//const item = {
+//  title: "Phone",
+// fullPrice: 100,
+//  calculatedPrice(discount = 0) {
+//  console.log(this.fullPrice - (discount / 100) * this.fullPrice);
+// }
+//}///;
+//item.calculatedPrice(50);
+/*
+function fadeIn(age) {
+  if (age > 65) {
+    console.log(this.price / 2);
+  } else {
+    console.log(this.price);
+  }
+}
+const item = {
+  title: "Phone",
+  price: 1000,
+  price2() {
+    console.log(this.price / 23);
+  }
+};
+//let result = item.price2.bind(item); //////// привязывает контекст
+//result();
+fadeIn.call(item, 70);
+let ruslt = fadeIn.bind(item, 30); //привязать контекст к функции сохранить в новую переменную
+
+function myFunction(title, price) {
+  this.title = title;
+  this.price = price;
+  console.log(this);
+}
+new myFunction("phone", 2000);
+
+let a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let b = [];
+if (Array.isArray(a)) {
+  console.log("Да Массив");
+  a.forEach((element) => {
+    if (element % 2 == 0) {
+      b.push(element);
+    }
+  });
+} else {
+  console.log("Нет массив");
+}
+console.log(b);
+function callbackFunction() {
+  console.log("Функция обратного вызова выполнена!");
+}
+
+// Функция, принимающая функцию обратного вызова в качестве аргумента
+function performOperation(callback) {
+  console.log("Выполняется операция...");
+  // Некоторая асинхронная операция
+  setTimeout(callback, 2000); // Выполнить функцию обратного вызова через 2 секунды
+}
+
+// Вызов функции, передавая функцию обратного вызова в качестве аргумента
+performOperation(callbackFunction);
+*/
+function greet(name) {
+  console.log("Привет, " + name + "!");
+}
+
+function processUserInput(callback) {
+  var name = "Evan";
+  callback(name);
+}
+
+processUserInput(greet);
+
+let a = [1, 2, 3, 4];
+
+function process(name, age, password) {
+  console.log("your datebase" + " " + name + " " + age + " " + password);
+}
+
+function processprocessUserInput(callback) {
+  let name = "Evan";
+  let age = 23;
+  let password = "<2321432>";
+  callback(name, age, password);
+}
+processprocessUserInput(process);
