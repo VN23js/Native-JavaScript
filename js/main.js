@@ -1010,6 +1010,8 @@ var user3 = {
 // функция вызовется с this=user
 showFullName.call(user3); // "Василий Петров"
 */
+/*
+
 const showFullName = {
   name: "creator",
   age: 23,
@@ -1024,11 +1026,11 @@ const lena = {
   name: "Lena",
   age: 23
 };
-
+*/
 //const funInfo = showFullName.greet.bind(lena); // " //метод bind возрощает новую функцию и мы ее можем вызвать когда нам угодно
 // а метод call взывает сразу функцию в в контексте вызовы и передать можно аргументы
 //funInfo("Build", "+342242");
-showFullName.greet.call(lena, "job", "+342242");
+//showFullName.greet.call(lena, "job", "+342242");
 
 const array = [1, 2, 3, 4];
 Array.prototype.multBy = function (n) {
@@ -1057,7 +1059,17 @@ const bankAccounts = [
   { id: "567", amount1: 4 },
   { id: "789", amount1: 20 }
 ];
+////
+//Метод reduce() принимает два параметра: функцию-колбэк и начальное значение для аккумулятора.
 
+//Сама функция-колбэк может принимать четыре параметра:
+
+//acc — текущее значение аккумулятора;
+//item — элемент массива в текущей итерации;
+//index — индекс текущего элемента;
+//arr — сам массив, который мы перебираем.
+
+///
 Array.prototype.finNumber = function (amount1) {
   ///создали метод котором  мы обращаемся к массиву объектов для подсчета суммы этого свойства для всех объектов в массиве.
   if (!this.every((item) => amount1 in item)) {
