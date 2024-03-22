@@ -996,3 +996,75 @@ function person(name, age) {
 
 const person1 = new person("Вася", 23);
 person1.greet();
+/*
+//Call и apply - это методы, которые позволяют вызывать функцию с указанием контекста и аргументов.
+function showFullName() {
+  console.log(this.firstName + " " + this.lastName);
+}
+
+var user3 = {
+  firstName: "Василий",
+  lastName: "Петров"
+};
+
+// функция вызовется с this=user
+showFullName.call(user3); // "Василий Петров"
+*/
+const showFullName = {
+  name: "creator",
+  age: 23,
+  greet(job, phoneNumber) {
+    console.log(`${this.name} ${this.age}!`);
+    console.log(job);
+    console.log(phoneNumber);
+  }
+};
+
+const lena = {
+  name: "Lena",
+  age: 23
+};
+
+//const funInfo = showFullName.greet.bind(lena); // " //метод bind возрощает новую функцию и мы ее можем вызвать когда нам угодно
+// а метод call взывает сразу функцию в в контексте вызовы и передать можно аргументы
+//funInfo("Build", "+342242");
+showFullName.greet.call(lena, "job", "+342242");
+
+const array = [1, 2, 3, 4];
+Array.prototype.multBy = function (n) {
+  return this.map((x) => x * n);
+};
+/// метод через прототипы
+console.log(array.multBy(2));
+
+Array.prototype.finNumber = function (number) {
+  return this.forEach((element) => {
+    if (element % number == 0) {
+      console.log(element);
+    }
+  });
+};
+const array1 = ["day", "month", "year"];
+///array.finNumber(2);
+const reslt = array1.reduce((accumulator, currentValue, index, array) => {
+  return { ...accumulator, [index]: currentValue };
+}, {});
+//console.log(reslt);
+
+const bankAccounts = [
+  { id: "123", amount1: 19 },
+  { id: "345", amount1: 33 },
+  { id: "567", amount1: 4 },
+  { id: "789", amount1: 20 }
+];
+
+Array.prototype.finNumber = function (amount1) {
+  ///создали метод котором  мы обращаемся к массиву объектов для подсчета суммы этого свойства для всех объектов в массиве.
+  if (!this.every((item) => amount1 in item)) {
+    throw new Error("Property not found in all items");
+  }
+  return this.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue[amount1];
+  }, 0);
+};
+console.log(bankAccounts.finNumber("amount1"));
