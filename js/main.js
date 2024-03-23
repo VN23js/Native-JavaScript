@@ -1031,7 +1031,7 @@ const lena = {
 // а метод call взывает сразу функцию в в контексте вызовы и передать можно аргументы
 //funInfo("Build", "+342242");
 //showFullName.greet.call(lena, "job", "+342242");
-
+/*
 const array = [1, 2, 3, 4];
 Array.prototype.multBy = function (n) {
   return this.map((x) => x * n);
@@ -1046,6 +1046,8 @@ Array.prototype.finNumber = function (number) {
     }
   });
 };
+*/
+/*
 const array1 = ["day", "month", "year"];
 ///array.finNumber(2);
 const reslt = array1.reduce((accumulator, currentValue, index, array) => {
@@ -1070,6 +1072,8 @@ const bankAccounts = [
 //arr — сам массив, который мы перебираем.
 
 ///
+
+
 Array.prototype.finNumber = function (amount1) {
   ///создали метод котором  мы обращаемся к массиву объектов для подсчета суммы этого свойства для всех объектов в массиве.
   if (!this.every((item) => amount1 in item)) {
@@ -1079,4 +1083,63 @@ Array.prototype.finNumber = function (amount1) {
     return accumulator + currentValue[amount1];
   }, 0);
 };
+
 console.log(bankAccounts.finNumber("amount1"));
+*/
+/*----------------------------------------------------------------
+function Animal(name) {
+  this.name = name;
+}
+
+function Dog(name, breed) {
+  Animal.call(this, name);
+  this.breed = breed;
+}
+
+let myDog = new Dog("Buddy", "Labrador");
+
+console.log(myDog instanceof Dog); // true
+console.log(myDog instanceof Animal);
+console.log(myDog instanceof Object);
+----------------------------------------------------------------
+*/
+/*----------------------------------------------------------------
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+  Person.prototype.greet = function () {
+    console.log(`Hello ${this.name} ${this.age}!`);
+  };
+}
+
+const john = new Person("Jhon", 21);
+
+//john.greet();
+
+class User {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  greet() {
+    console.log(`Hello ${this.name} ${this.age}!`);
+  }
+}
+const alex = new User("Alex", 21);
+alex.greet();
+
+class Person1 extends User {
+  constructor(name, age, email) {
+    super(name, age);
+    this.email = email;
+    this.name = name;
+    this.age = age;
+  }
+  sayHi() {
+    console.log(`Hello ${this.email} ${this.name}!`);
+  }
+}
+const alex2 = new Person1("Alex", 21, "alex@linked.ru");
+
+console.log(alex2.sayHi());
+*/
