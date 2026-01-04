@@ -764,8 +764,6 @@ var jsonDate = {
 console.log(jsonDate);
 */
 
-const { isArray } = require("jquery");
-
 /*
 function greeting(message) {
   return `Hello ${message}`;
@@ -787,12 +785,12 @@ console.log(b);
 */
 
 // замыкание:
-let user = {
-  firstName: "Вася",
-  sayHi() {
-    console.log(`Прив3333ет, ${this.firstName}!`);
-  }
-};
+//let user = {
+//  firstName: "Вася",
+// sayHi() {
+//  console.log(`Прив3333ет, ${this.firstName}!`);
+//},
+//};
 // замыкание:
 
 /*
@@ -985,7 +983,7 @@ showFullName.call(user2);
 //и метод greet с использованием прототипа. Затем мы создали два экземпляра класса person1 и person2 и вызвали метод greet на каждом из них.
 //Функция Person() создает новый класс с именем Person, который может использоваться для создания объектов.
 ///Параметры name и age позволяют инициализировать свойства объекта при его создании.
-function person(name, age) {
+/*function person(name, age) {
   this.name = name;
   this.age = age;
 
@@ -993,7 +991,7 @@ function person(name, age) {
     console.log(`Hello ${this.name} ${this.age}!`);
   };
 }
-
+/*
 const person1 = new person("Вася", 23);
 person1.greet();
 /*
@@ -1142,4 +1140,86 @@ class Person1 extends User {
 const alex2 = new Person1("Alex", 21, "alex@linked.ru");
 
 console.log(alex2.sayHi());
+*/
+/*----------------------------------------------------------------
+const NameProduct = [
+  { Product: "Pomidor", Price: 123 },
+  { Product: "Banan", Price: 183 },
+  { Product: "Apple", Price: 123 },
+  { Product: "Cake", Price: 123 },
+  { Product: "Milk", Price: 123 },
+];
+// для создания метода Array.prototype
+Array.prototype.fullPrice = function (Price) {
+  if (this.every((item) => Price in item)) {
+    const prices = NameProduct.map((item) => item.Price);
+    console.log(prices);
+  }
+
+  const allPrice = this.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue[Price];
+  }, 0);
+  console.log(allPrice);
+NameProduct.fullPrice("Price");
+----------------------------------------------------------------
+*/
+//const name1 = "Bob";
+//console.log(`Hi ${name1}`);
+//const more = 1 > 5;
+//console.log(more);
+
+/*----------------------------------------------------------------
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const divisor = Number(prompt("Введи число для деления чисел 1-9"));
+
+const division = numbers.map((num, index) => {
+  console.log(`Индекс ${index}`, `Число ${num}`, num / divisor);
+  return num / divisor;
+});
+
+console.log(division);
+----------------------------------------------------------------
+*/
+///let question = confirm("4 < 5");
+
+//if (question) {
+// alert("Правильно ");
+//} else {
+// alert("Не верно ");
+//}
+
+//let str = "123";
+//let num = Number(str);
+//console.log(num + 1);
+
+//let = numbers = 456;
+
+//let text = String(numbers);
+
+///console.log(text + 1);
+/*----------------------------------------------------------------
+const textArr = [
+  { id: 1, text: "Apple" },
+  { id: 2, text: "Apple" },
+  { id: 3, text: "" },
+];
+
+const checkText = function (textArr, id) {
+  textArr.forEach((item) => {
+    Boolean(item.text);
+    if (!item.text) {
+      console.log(
+        "ID:",
+        item.id,
+        "Текст:",
+        item.text,
+        "Есть текст?",
+        Boolean(item.text)
+      );
+    }
+  });
+};
+
+checkText(textArr);
+----------------------------------------------------------------
 */
