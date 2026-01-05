@@ -1223,3 +1223,59 @@ const checkText = function (textArr, id) {
 checkText(textArr);
 ----------------------------------------------------------------
 */
+
+function calculate() {
+  const a = Number(document.getElementById("a").value);
+  const b = Number(document.getElementById("b").value);
+  const c = Number(document.getElementById("c").value);
+  const result = document.getElementById("box");
+  console.log(a, b, c);
+
+  const D = b ** 2 - 4 * a * c;
+  const ResultX1 = 0;
+  const ResultX2 = 0;
+  console.log("Дискременант", D);
+  if (D > 0) {
+    const x1 = (-b + Math.sqrt(D)) / (2 * a);
+    const x2 = (-b - Math.sqrt(D)) / (2 * a);
+    console.log(`x1=${x1}`);
+    console.log(`x1=${x2}`);
+    const ResultX1 = x1;
+    const ResultX2 = x2;
+    result.textContent = `Дискриминант = ${D}, x1 = ${ResultX1}, x2 = ${ResultX2}`;
+  } else {
+    result.textContent = `Корней нет,  Дискриминант = ${D}`;
+  }
+}
+/*----------------------------------------------------------------
+document.addEventListener("DOMContentLoaded", () => {
+  //const paralax = document.querySelector(".paralax");
+
+  if (!paralax) return;
+
+  const isMobile = window.innerWidth <= 768;
+  if (!isMobile) return;
+  window.addEventListener("scroll", () => {
+    const offset = window.scrollY;
+    paralax.style.backgroundPositionY = `${offset * 0.5}px`;
+  });
+});
+----------------------------------------------------------------
+*/
+//console.log(2 ** 2);
+//let s = "МОЯ" + "Строка";
+//console.log(s);
+
+//let apple = "2";
+//let oranges = "3";
+//console.log(+apple + +oranges);
+//let counter = 2;
+//counter++;
+//console.log(counter);
+
+//let a = 1,
+//  b = 1;
+
+//let c = ++a; // ?
+//let d = b++;
+//console.log(a, b, c, d);
