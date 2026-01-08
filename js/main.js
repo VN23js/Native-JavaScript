@@ -211,17 +211,17 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	// getResource('http://localhost:3000/menu')
 	// 	.then(data => {
-	// 		data.forEach(({img, altimg, title, descr, price}) => {				//- 1 вариант (с шаблонами) 
+	// 		data.forEach(({img, altimg, title, descr, price}) => {				//- 1 вариант (с шаблонами)
 	// 			new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
 	// 		});
 	// 	});
 
-	// getResource('http://localhost:3000/menu')                               
+	// getResource('http://localhost:3000/menu')
 	//         .then(data => createCard(data));
 
 	// function createCard(data) {
 	//         data.forEach(({img, altimg, title, descr, price}) => {
-	//                 const element = document.createElement('div');				//- 2 вариант (без шаблонов)                               
+	//                 const element = document.createElement('div');				//- 2 вариант (без шаблонов)
 
 	//                 element.classList.add('menu__item');
 
@@ -304,7 +304,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			// }) - удалить
 			// JSON.stringify(object)
 			postData('http://localhost:3000/requests', json)
-				// .then(data => data.text()) - удалить 
+				// .then(data => data.text()) - удалить
 				.then(data => {
 					console.log(data);
 					showThanksModal(message.success);
@@ -322,10 +322,10 @@ window.addEventListener('DOMContentLoaded', () => {
 			// statusMessage.textContent = message.success; - удалить
 			// setTimeout(() => { - удалить
 			// statusMessage.remove(); - удалить
-			// }, 2000); - удалить 
+			// }, 2000); - удалить
 			//                 form.reset(); - удалить
 			//         } else { - удалить
-			//                 showThanksModal(message.failure); - удалить            
+			//                 showThanksModal(message.failure); - удалить
 			//         } - удалить
 			// }); - удалить
 		});
@@ -363,13 +363,13 @@ window.addEventListener('DOMContentLoaded', () => {
 	//         } - пример удалить
 	// }) - пример удалить
 	//         .then(response => response.json()) - пример удалить
-	//         .then(json => console.log(json)); - пример удалить 
+	//         .then(json => console.log(json)); - пример удалить
 
 	// fetch('http://localhost:3000/menu')
 	// 	.then(data => data.json())
 	// 	.then(res => console.log(res));
 
-	// SLIDER 
+	// SLIDER
 
 	const slides = document.querySelectorAll('.offer__slide'),
 		  slider = document.querySelector('.offer__slider'),
@@ -381,7 +381,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		  slidesField = document.querySelector('.offer__slider-inner'),
 		  width = window.getComputedStyle(slidesWrapper).width;
 
-	let slideIndex = 1;	
+	let slideIndex = 1;
 	let offset = 0;
 
 	if (slides.length < 10) {
@@ -455,16 +455,16 @@ window.addEventListener('DOMContentLoaded', () => {
 	}
 
 	function deleteNotDigits(str) {
-		return +str.replace(/\D/g, ''); 
+		return +str.replace(/\D/g, '');
 	}
 
 	function dotsOpacity() {
 		dots.forEach(dot => dot.style.opacity = '.5');
 		dots[slideIndex - 1].style.opacity = 1;
 	}
-	
+
 	next.addEventListener('click', () => {
-						// slice(0, width.length - 2) 
+						// slice(0, width.length - 2)
 		if (offset == deleteNotDigits(width) * (slides.length - 1)) {
 			offset = 0;
 		} else {
@@ -530,7 +530,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			// 	current.textContent = `0${slideIndex}`;
 			// } else {
 			// 	current.textContent = slideIndex;
-			// }	
+			// }
 
 			dotsOpacity();
 			// dots.forEach(dot => dot.style.opacity = '.5');
@@ -611,7 +611,7 @@ window.addEventListener('DOMContentLoaded', () => {
 				elem.classList.add(activeClass);
 			}
 		});
-	} 
+	}
 
 	initLocalSettings('#gender div', 'calculating__choose-item_active');
 	initLocalSettings('.calculating__choose_big div', 'calculating__choose-item_active');
@@ -622,7 +622,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			return;
 		}
 
-		if (sex === 'female') { 
+		if (sex === 'female') {
 			result.textContent = Math.round((447.6 + (9.2 * weight) + (3.1 * height) - (4.3 * age)) * ratio);
 		} else {
 			result.textContent = Math.round((88.36 + (13.4 * weight) + (4.8 * height) - (5.7 * age)) * ratio);
@@ -643,13 +643,13 @@ window.addEventListener('DOMContentLoaded', () => {
 					sex = e.target.getAttribute('id');
 					localStorage.setItem('sex', e.target.getAttribute('id'));
 				}
-	
+
 				elements.forEach(elem => {
 					elem.classList.remove(activeClass);
 				});
-	
+
 				e.target.classList.add(activeClass);
-	
+
 				calcTotal();
 			});
 		});
@@ -820,7 +820,7 @@ let user2 = {
 function func(phrase) {
   console.log(phrase + ", " + this.firstName);
 }
-//После контекста в call можно передать аргументы для функции. 
+//После контекста в call можно передать аргументы для функции.
 // привязка this к user
 let funcUser = func.bind(user2);
 
@@ -1225,16 +1225,16 @@ checkText(textArr);
 */
 
 function calculate() {
-  const a = Number(document.getElementById("a").value);
-  const b = Number(document.getElementById("b").value);
-  const c = Number(document.getElementById("c").value);
-  const result = document.getElementById("box");
+  const a = Number(document.getElementById('a').value);
+  const b = Number(document.getElementById('b').value);
+  const c = Number(document.getElementById('c').value);
+  const result = document.getElementById('box');
   console.log(a, b, c);
 
   const D = b ** 2 - 4 * a * c;
   const ResultX1 = 0;
   const ResultX2 = 0;
-  console.log("Дискременант", D);
+  console.log('Дискременант', D);
   if (D > 0) {
     const x1 = (-b + Math.sqrt(D)) / (2 * a);
     const x2 = (-b - Math.sqrt(D)) / (2 * a);
@@ -1279,3 +1279,293 @@ document.addEventListener("DOMContentLoaded", () => {
 //let c = ++a; // ?
 //let d = b++;
 //console.log(a, b, c, d);
+
+//console.log(2>1)
+//console.log(2==1)
+//console.log(2!=1)
+//console.log('Я' > 'А'); //1071 > 1040 → значит:
+//console.log('2' > 1);
+//console.log(0 == false);
+/*----------------------------------------------------------------
+const arr = [1, 2, 3, 4, , 6, 7, 8];
+const a = 5;
+const findNumber = arr.find((etm) => etm === a);
+
+if (findNumber) {
+  console.log(findNumber);
+} else {
+  console.log('Нету');
+}
+let yers = 2015;
+
+if (yers < 2015) {
+  console.log('Рано');
+} else if (yers > 2015) {
+  console.log('Поздно');
+} else {
+  console.log('Верно');
+}
+const age = 0;
+let accsessAllowed =
+  age > 18 ? console.log('ДА ему есть 18') : console.log('Нету ему 18');
+
+let p = 2;
+let t = 3;
+let result = p + t < 4 ? 'Меньше 4' : 'Больше 4';
+console.log(result);
+
+let message = '';
+
+let who =
+  message == 'Сотрудник'
+    ? 'Привет'
+    : message == 'Директор'
+    ? 'Здраствуйте'
+    : message == ''
+    ? 'Нет логин'
+    : '';
+console.log(who);
+----------------------------------------------------------------
+*/
+/*----------------------------------------------------------------
+const isAdmin = true;
+const isUser = false;
+
+if (isAdmin || isUser) {
+  console.log('Доступ разрешен');
+} else {
+  console.log('Доступ запрещен');
+}
+
+let johnHasCar = true;
+johnHasCar ||= 'Dont have a car';
+console.log(johnHasCar);
+
+console.log(true && true);
+
+let admin = true;
+let user = true;
+
+if (admin === true && user === true) {
+  console.log('Истина');
+}
+
+const m = 0.01; //вес
+const e = 500; //дж
+
+const x1 = Math.sqrt((2 * e) / m);
+console.log(x1, 'м/с..');
+
+let namex = ''; //
+
+namex ||= 'Гость'; // 👉 ||= — если значение ложное → присвоить новое
+
+console.log(namex); // "Гость"
+
+const logIn = false;
+
+logIn &&= 'admin'; //👉 &&= — если значение истинное → присвоить новое
+console.log(logIn);
+console.log(!true);
+console.log(!false);
+----------------------------------------------------------------
+*/
+
+/*----------------------------------------------------------------
+const age = 20;
+
+console.log(age != 19); // true
+console.log(age == 19); // false
+console.log(age > 18); // true
+console.log(age < 10); // false
+
+let who = prompt('Кто там');
+console.log(who);
+function login() {
+  if (who == 'Я главный') {
+    if (who == null) {
+      alert('Отменено');
+      return 0;
+    }
+    const password = 1234;
+    const input = prompt('Введите пароль');
+    console.log(input, typeof input);
+
+    if (input == null) {
+      alert('Отменено');
+      return;
+    }
+    const check = Number(input);
+    if (password === check) {
+      alert('Здраствуйте ');
+    } else {
+      alert('Неверный пароль ');
+    }
+  } else {
+    console.log('Я вас не знаю');
+  }
+}
+login();
+----------------------------------------------------------------
+*/
+
+/*----------------------------------------------------------------
+let user;
+console.log(user ?? 'Аноним');
+let count = 0;
+console.log(count ?? 10); // 0 — правильно
+
+let age = 0;
+console.log(age || 100);
+console.log(age ?? 100); //роверяет, что переменная height содержит null/undefined,
+//  а поскольку это не так, то результатом является сама переменная height, т.е. 0.
+
+let userAge = null;
+userAge ??= 18;
+console.log(userAge);
+----------------------------------------------------------------
+*/
+//let user = {
+// name: 'Jho',
+// age: 20,
+//};
+
+//for (let key in user) {
+//  if (user[key] == 'Jho') {
+//  console.log('да есть ');
+//}
+//}
+
+//let code = {
+// '+49': 'Германия',
+//'+1': 'Сша',
+// '+2': 'Швеция',
+// '+44': 'Великобритания',
+//};
+
+//for (let codes in code) {
+//console.log(codes);
+//}
+
+/*----------------------------------------------------------------
+const arr = ['a', 'b', 'c'];
+
+for (let frutis of arr) {
+  if (frutis == 'b') {
+    console.log('да есть ');
+  } else {
+    console.log(frutis, 'нету ');
+  }
+}
+const all = arr.some((frutis) => frutis == 'b');
+
+console.log(all);
+
+let i = 0;
+//while (i < 3) {
+// console.log(i);
+// i++;
+//}
+const perPage = 5;
+const pageNum = 2;
+function page(pageNum, perPage) {
+  const skip = (pageNum - 1) * perPage;
+  console.log(skip);
+}
+
+page(pageNum, perPage);
+
+do {
+  console.log(i);
+  i++;
+} while (i < 3);
+----------------------------------------------------------------
+*/
+//let i = 0;
+
+//for (; i < 5; i++) {
+//  console.log(i);
+//}
+
+//let sum = 0;
+
+//while (true) {
+//  let value = +prompt('Input number');
+// if (!value) break;
+//sum += value;
+//}
+//alert('Сумма: ' + sum);
+
+//for (let i = 0; i < 10; i++) {
+// if (i % 2 === 0) continue;
+//console.log(i);
+//}
+
+//for (let i = 0; i < 10; i++) {
+// if (i === 5) {
+//  break;
+//}
+// console.log(i);
+//}
+
+//for (let i = 0; i < 10; i++) {
+// if (i === 6) continue;
+
+//console.log(i);
+//}
+//const arr = [1, 3, 7, 5, 9];
+
+//for (let i = 0; i < arr.length; i++) {
+//if (arr[i] === 5) {
+// console.log('Нашли 5 на позиции ' + i);
+//break;
+//}
+//}
+//let i = 0;
+//while (i++ < 5) console.log(i); //Цикл проверяет старое значение i, потом увеличивает i++
+//В alert(i) уже идёт новое значение, поэтому выводится 1, 2, 3, 4, 5
+//let i = 0;
+
+//while (i < 3) {
+// console.log(`number ${i}!`);
+// i++;
+//}
+
+//while (true) {
+//// let input = +prompt('Введите больше ста');
+//if (!input) {
+// break;
+//}
+//if (input > 100) {
+//  alert('Вы ввели больше 100');
+// break;
+//}
+//}
+
+let a = +prompt('Угадай число');
+
+switch (
+  true // switch(true) → каждый case проверяет, равен ли true результат выражения
+) {
+  //case a < 100 → 50 < 100 → true → совпало → выполняется
+
+  case a === 10:
+    console.log('Мало');
+    break;
+  case a === 15:
+    console.log('+5');
+    break;
+  case a === 20:
+    console.log('В точку ураа');
+    break;
+  case a > 100:
+    console.log('Зачем ввел  больше 100');
+    break;
+
+  default:
+    console.log('ничего нет');
+}
+
+window.addEventListener('load', function () {
+  document.getElementById('hideBtn').click();
+});

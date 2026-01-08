@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="css/style.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
@@ -23,8 +24,80 @@
 </div>
 <div class="paralax">
   <div class="content">
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable body scrolling</button>
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling2" aria-controls="offcanvasScrolling">Enable body 2222scrolling</button>
+  <!-- Кнопка для модального окна 1 -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1">
+  Открыть модальное окно 1
+</button>
+
+<!-- Кнопка для модального окна 2 -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal2">
+  Открыть модальное окно 2
+</button>
+
     <img class="parallax" src="./53020814_ftuy4.jpg" />
     <h1>Привет!</h1>
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<!-- Модальное окно 1 -->
+<div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal1Label">Модальное окно 1</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Содержимое модального окна 1.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Модальное окно 2 -->
+<div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2Label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal2Label">Модальное окно 2</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Содержимое модального окна 2.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <p>Try scrolling the rest of the page to see this option in action.</p>
+
+  </div>
+</div>
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling2" aria-labelledby="offcanvasScrollingLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas w22222ith body scrolling</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <p>Try scrolling the res22222222t 22222222of the page to see this option in action.</p>
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable body scrolling</button>
+  </div>
+</div>
+
+
+
+</div>
   </div>
 </div>
 
@@ -35,6 +108,7 @@
     <main class="main"></main>
     <footer class="footer"></footer>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   <script src="js/main.js"></script>
 
 </body>

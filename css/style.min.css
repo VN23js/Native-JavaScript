@@ -1,6 +1,82 @@
-html{-webkit-box-sizing:border-box;box-sizing:border-box}*,*::after,*::before{-webkit-box-sizing:inherit;box-sizing:inherit}ul[class],ol[class]{padding:0}body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,figure,figcaption,blockquote,dl,dd{margin:0}ul[class]{list-style:none}img{max-width:100%;display:block}input,button,textarea,select{font:inherit}a{text-decoration:none}html,body{height:100%}.wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;min-height:100%}.main{-webkit-box-flex:1;-ms-flex:1 0 auto;flex:1 0 auto}.footer{-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto}.container{max-width:1200px;margin:0 auto;padding:0 15px}
-.box{
-    padding: 15px;
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+ul[class],
+ol[class] {
+  padding: 0;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+ul[class] {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+a {
+  text-decoration: none;
+}
+html,
+body {
+  height: 100%;
+}
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 100%;
+}
+.main {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+.footer {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.box {
+  padding: 15px;
   border-radius: 10px;
   background: linear-gradient(135deg, #646cff, #535bf2);
   color: #fff;
@@ -11,62 +87,71 @@ html{-webkit-box-sizing:border-box;box-sizing:border-box}*,*::after,*::before{-w
   justify-content: center;
   transition: 0.3s;
 }
-.forms{
-  max-width: 500px;      /* максимальная ширина контейнера */
-  margin: 20px auto;     /* центрируем */
+.forms {
+  max-width: 500px; /* максимальная ширина контейнера */
+  margin: 20px auto; /* центрируем */
   padding: 10px;
   border: 2px solid #333;
   border-radius: 8px;
+}
+.inputs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 10px;
+}
+.fon {
+  background: #73c8a9; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #373b44,
+    #73c8a9
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #373b44,
+    #73c8a9
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: #333;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.paralaximg {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.1s;
+}
+.paralax {
+  height: 400px;
 
-}
-.inputs{
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
-    flex-wrap: wrap;
-    flex-direction: column;
-    margin: 10px;
-}
-.fon{
- background: #73C8A9;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #373B44, #73C8A9);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #373B44, #73C8A9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-}
-.btn{
-    padding: 12px  24px ;
-    font-size: 16px;
-    border-radius: 8px;
-    background-color: #333;
-    border:none;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.paralaximg{
-    width: 100%;
-    position: absolute;
-    top: 0;
-   left: 0;
-   transition: transform 0.1s;
-}
-.paralax{
-      height: 400px;
-   
-    background-attachment: fixed;
-     background-position: center;
+  background-attachment: fixed;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-transform: translateY();
-   display: flex;            /* делаем контейнер flex */
-  justify-content: center;  /* центрируем горизонтально */
-  align-items: flex;      /* центрируем вертикально */
-  text-align: center;  
+  transform: translateY();
+  display: flex; /* делаем контейнер flex */
+  justify-content: center; /* центрируем горизонтально */
+  align-items: flex; /* центрируем вертикально */
+  text-align: center;
   background-position: 0px;
- 
 }
 .paralax .content {
-
   color: rgb(0, 0, 0);
-  
+}
+
+.btn.custom-btn {
+  color: rgb(0, 0, 0);
+  left: -9999px;
+  position: absolute;
 }
