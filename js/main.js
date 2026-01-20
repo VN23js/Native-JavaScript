@@ -1225,10 +1225,11 @@ checkText(textArr);
 */
 
 function calculate() {
+  const result = document.getElementById('card-body');
   const a = Number(document.getElementById('a').value);
   const b = Number(document.getElementById('b').value);
   const c = Number(document.getElementById('c').value);
-  const result = document.getElementById('box');
+
   console.log(a, b, c);
 
   const D = b ** 2 - 4 * a * c;
@@ -1542,30 +1543,184 @@ do {
 //}
 //}
 
-let a = +prompt('Угадай число');
+//let a = +prompt('Угадай число');
 
-switch (
-  true // switch(true) → каждый case проверяет, равен ли true результат выражения
-) {
-  //case a < 100 → 50 < 100 → true → совпало → выполняется
+//switch (
+//true // switch(true) → каждый case проверяет, равен ли true результат выражения
+//) {
+//case a < 100 → 50 < 100 → true → совпало → выполняется
 
-  case a === 10:
-    console.log('Мало');
-    break;
-  case a === 15:
-    console.log('+5');
-    break;
-  case a === 20:
-    console.log('В точку ураа');
-    break;
-  case a > 100:
-    console.log('Зачем ввел  больше 100');
-    break;
+// case a === 10:
+//  console.log('Мало');
+//break;
+// case a === 15:
+// console.log('+5');
+// break;
+//case a === 20:
+// console.log('В точку ураа');
+// break;
+// case a > 100:
+// console.log('Зачем ввел  больше 100');
+// break;
 
-  default:
-    console.log('ничего нет');
+//default:
+//  console.log('ничего нет');
+//}
+
+//window.addEventListener('load', function () {
+// document.getElementById('hideBtn').click();
+//});
+
+//function hi() {
+////console.log('hi');
+//}
+
+//const fun = hi;
+
+//fun();
+
+//function ask(question, yes, no) {
+///if (confirm(question)) yes();
+//else no();
+//}
+//function ShowOk() {
+//console.log('Ответ да');
+//}
+//function Cansel() {
+//console.log('Ответ нет');
+//}
+
+//ask('Вы согласны', ShowOk, Cansel);
+
+//const user = {
+//  name1: 'Alex',
+//age: 25,
+//};
+
+//Object.values(user).forEach((value) => {
+//// console.log(value);
+////});
+
+///console.log(Object.entries(user)); // возрощает массив пар ключей
+
+//for (let [key, value] of Object.entries(user)) {
+// console.log(key, value);
+//}
+
+//Object.keys(user).forEach((key) => {
+//console.log(key, user[key]); // user[key] значение этого свойства
+////});
+//console.log(Object.keys(user));
+/*----------------------------------------------------------------
+Методы Object — это встроенные функции, которые помогают работать с объектами. Например:
+
+Object.keys() — возвращает массив ключей объекта.
+
+Object.values() — возвращает массив значений объекта.
+
+Object.entries() — возвращает массив пар [ключ, значение].
+----------------------------------------------------------------
+*/
+
+/*----------------------------------------------------------------
+let age = +prompt('Сколько лет');
+
+let welcome = age < 18 ? console.log('Привет') : console.log('Здраствуйте');
+
+const ask = (question, yes, no) => {
+  if (confirm(question)) yes();
+  else no();
+};
+ask(
+  'Вы согласны ',
+  () => alert('Вы согласились.'),
+  () => alert('Вы отменили выполнение.')
+);
+----------------------------------------------------------------
+*/
+
+/*----------------------------------------------------------------
+let user = {
+  name: 'Hol',
+  role: 'User',
+  isAdmin: true,
+};
+
+delete user.role;
+console.log(user);
+
+user.name = 'Pete'; // (*)
+
+console.log(user.name); // Pete
+
+console.log('name' in user);
+
+for (let key in user) {
+  if (typeof user[key] === 'string') {
+    user[key] = user[key] + ' Строку';
+  }
 }
 
-window.addEventListener('load', function () {
-  document.getElementById('hideBtn').click();
+console.log(user);
+
+const Price = {
+  banan: 100,
+  apple: 160,
+  orange: 130,
+};
+let sum = 0;
+for (let key in Price) {
+  sum += Price[key];
+}
+console.log(sum);
+----------------------------------------------------------------
+*/
+
+const basefruits = ['🍎', '🍌', '🍇', '🍉', '🍓'];
+const result = document.getElementById('box');
+const Giftresult = document.getElementById('cont');
+const container = document.getElementById('fruit-container');
+const fruits = [];
+for (let i = 0; i < 10; i++) {
+  fruits.push(...basefruits);
+}
+console.log(fruits);
+fruits.forEach((fruits) => {
+  const box = document.createElement('div');
+  box.className = 'fruit';
+  box.textContent = fruits;
+  container.appendChild(box);
 });
+function randomFruit() {
+  let randomNum = Math.round(Math.random() * 4);
+  console.log(randomNum);
+  const foundindex = 0;
+  fruits.forEach((item, index) => {
+    if (randomNum === index) {
+      console.log(index, item);
+    }
+  });
+  const items = 4;
+  const size = 100;
+  const spins = 5;
+  //5*4=20 выбрали середину
+  //20*100=2000 px
+  //3*100=300
+  //2000+300=2300
+  const offset = -(spins * items * size + randomNum * size);
+  console.log(offset);
+  const start = randomNum * 100;
+  container.style.transform = `translateX(${offset}px)`;
+  const giftitem = randomNum;
+
+  const giftFruit = basefruits.forEach((item, index) => {
+    if (giftitem === index) {
+      console.log(giftitem);
+      const giftFruits = document.createElement('div');
+      giftFruits.className = 'fruit';
+
+      giftFruits.textContent = item;
+      Giftresult.appendChild(giftFruits);
+    }
+  });
+}
