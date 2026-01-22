@@ -53,7 +53,7 @@
       </button>
 
       <!-- Кнопка для модального окна 2 -->
-      <button type="button" class="butt btn-primary" data-bs-toggle="modal" data-bs-target="#modal2">
+      <button type="button" id="btnGift" class="butt btn-primary" data-bs-toggle="modal" data-bs-target="#modal2">
         Открыть модальное окно 2
       </button>
 
@@ -83,7 +83,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="modal2Label">Модальное окно 2</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <button type="button" id="CloseGift" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <div   id="cont"class=""></div>
@@ -138,6 +138,16 @@
           </div>
         </div>
       </div>
+      <div class="formstoodo">
+      <input class="input-style" value="" id="inputName" placeholder="Введи Имя " ></input>
+           <input class="input-style" value="" id="inputMail" placeholder="Введи Почту " ></input>
+            <div id="card-body1" class="card-body">
+
+                </div>
+                 <button class="butt" id="addToodoButton">Добавить человека </button>
+           </div>
+
+
     </div>
 
     </header>
@@ -149,6 +159,7 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
+     <script src="js/main.min.js"></script>
 
 </body>
 

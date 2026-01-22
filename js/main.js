@@ -1721,6 +1721,196 @@ function randomFruit() {
 
       giftFruits.textContent = item;
       Giftresult.appendChild(giftFruits);
+      setInterval;
+      const openGift = document.getElementById('btnGift').click();
+      const CloseGifts = document.getElementById('CloseGift');
+      CloseGifts.addEventListener('click', () => {
+        container.style.transform = `translateX(${0}px)`;
+      });
     }
   });
 }
+/*----------------------------------------------------------------
+let User = {
+  name: 'JHON',
+  age: 12,
+};
+
+//let key = prompt('Что вы хотите узнать ');
+//console.log(User[key]);
+
+const nameMail = 'email';
+const value = 'test@mail.ru';
+
+const userMail = {
+  [nameMail]: value,
+};
+
+console.log(userMail);
+
+const change = document.getElementById('change');
+console.log(change.value);
+
+console.log('age' in User); //true
+
+console.log('aged' in User); // false
+
+let admin = User;
+
+let clone = { ...User };
+clone.name = 'Piter';
+console.log(clone);
+console.log(admin);
+
+Object.assign(User, { isAdmin: true, role: 'admin' });
+console.log(User);
+
+const defaults = { theme: 'light', fontSize: 15 };
+const userSettings = { fontSize: 18 };
+
+const settings = Object.assign({}, defaults, userSettings);
+console.log(settings);
+
+const user2 = {
+  name2: 'Jon',
+  admin: true,
+  information() {
+    console.log(this.name2, this.admin);
+  },
+};
+
+class User1 {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+class UserService {
+  constructor() {
+    this.users = [
+      new User1('jHOn', 30),
+      new User1('jILK', 20),
+      new User1('Alex', 40),
+    ];
+  }
+  getAllUsers() {
+    return this.users;
+  }
+}
+const UserServices1 = new UserService();
+console.log(UserServices1.getAllUsers());
+
+class Users {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  sayHi() {
+    console.log(`Привет ${this.name}`);
+  }
+}
+const user1 = new Users('jon', 30);
+
+class UsersServ {
+  constructor(name2, id, mail) {
+    this.name2 = name2;
+    this.id = id;
+    this.mail = mail;
+  }
+}
+
+class UserServices2 {
+  constructor() {
+    this.users = [];
+  }
+  addUsers(name2, id, mail) {
+    const user = new UsersServ(name2, id, mail);
+    this.users.push(user);
+  }
+  getAllUsers() {
+    return this.users;
+  }
+}
+
+const userService = new UserServices2();
+
+userService.addUsers('Jhon', 1, 'mail@ggg.ru');
+----------------------------------------------------------------
+*/
+/*!
+let id1 = Symbol('id');
+let id2 = Symbol('id');
+console.log(id1 == id2);
+const ROLE = Symbol('role');
+const user = {
+  name: 'Jhon',
+  [ROLE]: 'admin',
+};
+console.log(user.name);
+console.log(user[Symbol('id')]);
+
+const arr = [1, 2, 3];
+console.log(arr[Symbol.iterator]());
+
+function checkAdmin(u) {
+  if (u[ROLE] === 'admin') {
+    console.log('Пользователь админ');
+  }
+}
+checkAdmin(user);
+ */
+const inputName = document.getElementById('inputName');
+const inputId = document.getElementById('inputId');
+const inputMail = document.getElementById('inputMail');
+const resultTodo = document.getElementById('card-body1');
+const addToodoButton = document.getElementById('addToodoButton');
+class UsersServ {
+  constructor(name2, id, mail) {
+    this.name2 = name2;
+    this.id = id;
+    this.mail = mail;
+  }
+}
+
+class UserServices2 {
+  constructor() {
+    this.users = [];
+    this.idplus = 0;
+  }
+  addUsers(name2, id, mail) {
+    const user = new UsersServ(name2, id, mail);
+    this.users.push(user);
+  }
+  getAllUsers() {
+    return this.users;
+  }
+  addUserToodo(name2, id, mail) {
+    this.idplus++;
+    id = this.idplus;
+    resultTodo.innerHTML = '';
+    const user = new UsersServ(name2, id, mail);
+    this.users.push(user);
+
+    this.users.forEach((u) => {
+      const giftdiv = document.createElement('div');
+      giftdiv.textContent = `Имя ${u.name2} Айди ${u.id} почта ${u.mail}`;
+      resultTodo.appendChild(giftdiv);
+    });
+  }
+  showalluser() {
+    resultTodo.textContent = `Имя ${users.name2} Айди ${users.id} почта ${users.mail}`;
+  }
+}
+
+const userService = new UserServices2();
+
+addToodoButton.addEventListener('click', () => {
+  userService.addUserToodo(inputName.value, 0, inputMail.value);
+});
+
+const users = userService.getAllUsers();
+const mapUsers = [];
+users.map((user) => {
+  mapUsers.push(user.name2, user.id, user.mail);
+});
+console.log(mapUsers);

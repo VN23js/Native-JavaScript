@@ -246,3 +246,14 @@ p {
 .input-style:focus {
   box-shadow: 0 0 0 0.15vw skyblue;
 }
+.formstoodo {
+  display: flex;
+  gap: 10px;
+  margin: auto 0;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+#card-body1 {
+  color: white;
+}
