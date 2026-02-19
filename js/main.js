@@ -1680,6 +1680,8 @@ const basefruits = ['🍎', '🍌', '🍇', '🍉', '🍓'];
 const result = document.getElementById('box');
 const Giftresult = document.getElementById('cont');
 const container = document.getElementById('fruit-container');
+const fruit1 = document.getElementById('fruit1');
+
 const fruits = [];
 for (let i = 0; i < 10; i++) {
   fruits.push(...basefruits);
@@ -1711,6 +1713,7 @@ function randomFruit() {
   console.log(offset);
   const start = randomNum * 100;
   container.style.transform = `translateX(${offset}px)`;
+  fruit1.style.transform = `translateX(${offset}px)`;
   const giftitem = randomNum;
 
   const giftFruit = basefruits.forEach((item, index) => {
@@ -1726,10 +1729,12 @@ function randomFruit() {
       const CloseGifts = document.getElementById('CloseGift');
       CloseGifts.addEventListener('click', () => {
         container.style.transform = `translateX(${0}px)`;
+        fruit1.style.transform = `translateX(${0}px)`;
       });
     }
   });
 }
+
 /*----------------------------------------------------------------
 let User = {
   name: 'JHON',
