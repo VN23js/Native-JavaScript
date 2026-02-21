@@ -1710,17 +1710,26 @@ function randomFruit() {
   //3*100=300
   //2000+300=2300
 
-  const offset = 600 - (spins * items * size + randomNum * size) + -20;
-
+  let offset = 0;
+  if (randomNum === 2 || randomNum === 3) {
+    offset = 600 - (spins * items * size + randomNum * size) + -80;
+  }
+  if (randomNum === 0 || randomNum === 1) {
+    offset = 600 - (spins * items * size + randomNum * size) + 30;
+  }
+  if (randomNum === 4) {
+    offset = 600 - (spins * items * size + randomNum * size) + -30;
+  }
   console.log(offset);
   const start = randomNum * 100;
-  container.style.transition = 'transform 2s cubic-bezier(0.34, 1.56, 0.64, 1)';
+  container.style.transition = 'transform 4s cubic-bezier(0.34, 1.56, 0.64, 1)';
   container.style.transform = `translateX(${offset}px)`;
   setTimeout(() => {
     const finalOffset = 600 - (spins * items * size + randomNum * size);
-    //container.style.transition ='transform 1s cubic-bezier(0.34, 1.56, 0.64, 1)';
+    container.style.transition =
+      'transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
     container.style.transform = `translateX(${finalOffset}px)`;
-  }, 2400); // 900ms — чуть меньше времени анимации
+  }, 4400); //  — чуть меньше времени анимации
   // fruit1.style.transform = `translateX(${offset}px)`;
   const giftitem = randomNum;
 
@@ -1738,7 +1747,7 @@ function randomFruit() {
       const CloseGifts2 = document.getElementById('modal2');
       setTimeout(() => {
         const openGift = document.getElementById('btnGift').click();
-      }, 2500);
+      }, 4700);
       CloseGifts.addEventListener('click', () => {
         container.style.transition = 'none';
         container.style.transform = `translateX(${-300}px)`;
