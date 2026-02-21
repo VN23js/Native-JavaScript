@@ -1680,10 +1680,10 @@ const basefruits = ['🍎', '🍌', '🍇', '🍉', '🍓'];
 const result = document.getElementById('box');
 const Giftresult = document.getElementById('cont');
 const container = document.getElementById('fruit-container');
-const fruit1 = document.getElementById('fruit1');
-
+//const fruit1 = document.getElementById('fruit1');
+const checkbutton = false;
 const fruits = [];
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 20; i++) {
   fruits.push(...basefruits);
 }
 console.log(fruits);
@@ -1704,16 +1704,24 @@ function randomFruit() {
   });
   const items = 4;
   const size = 100;
-  const spins = 5;
+  const spins = 9;
   //5*4=20 выбрали середину
   //20*100=2000 px
   //3*100=300
   //2000+300=2300
-  const offset = -(spins * items * size + randomNum * size);
+
+  const offset = 600 - (spins * items * size + randomNum * size) + -20;
+
   console.log(offset);
   const start = randomNum * 100;
+  container.style.transition = 'transform 2s cubic-bezier(0.34, 1.56, 0.64, 1)';
   container.style.transform = `translateX(${offset}px)`;
-  fruit1.style.transform = `translateX(${offset}px)`;
+  setTimeout(() => {
+    const finalOffset = 600 - (spins * items * size + randomNum * size);
+    //container.style.transition ='transform 1s cubic-bezier(0.34, 1.56, 0.64, 1)';
+    container.style.transform = `translateX(${finalOffset}px)`;
+  }, 2400); // 900ms — чуть меньше времени анимации
+  // fruit1.style.transform = `translateX(${offset}px)`;
   const giftitem = randomNum;
 
   const giftFruit = basefruits.forEach((item, index) => {
@@ -1724,12 +1732,21 @@ function randomFruit() {
 
       giftFruits.textContent = item;
       Giftresult.appendChild(giftFruits);
-      setInterval;
-      const openGift = document.getElementById('btnGift').click();
+      //setInterval;
+
       const CloseGifts = document.getElementById('CloseGift');
+      const CloseGifts2 = document.getElementById('modal2');
+      setTimeout(() => {
+        const openGift = document.getElementById('btnGift').click();
+      }, 2500);
       CloseGifts.addEventListener('click', () => {
-        container.style.transform = `translateX(${0}px)`;
-        fruit1.style.transform = `translateX(${0}px)`;
+        container.style.transition = 'none';
+        container.style.transform = `translateX(${-300}px)`;
+        // fruit1.style.transform = `translateX(${0}px)`;
+      });
+      CloseGifts2.addEventListener('click', () => {
+        container.style.transition = 'none';
+        container.style.transform = `translateX(${-300}px)`;
       });
     }
   });
