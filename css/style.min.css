@@ -95,7 +95,7 @@ p {
   display: flex;
   transition: transform 1s ease-out;
   max-width: 700px;
-  height: 100px;
+  height: 200px;
   position: relative;
   margin: 0 auto;
   overflow: hidden;
@@ -193,9 +193,9 @@ p {
   top: 0;
 }
 .fruit {
-  font-size: 50px;
-  height: 100px;
-  width: 100px;
+  font-size: 60px;
+  height: 150px;
+  width: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -206,6 +206,7 @@ p {
   display: flex;
   transition: transform 1s ease-out;
   left: 100px;
+
   position: absolute;
 }
 .row-content {
@@ -278,8 +279,8 @@ p {
   transition: transform 2s ease-out;
   position: absolute;
   left: 0;
-  top: 0;
-  padding: 0 calc(50% - 50px);
+  top: 26px;
+  padding: 0 calc(50% - 75px);
   transform: translateX(-300px);
 }
 .cont1 {

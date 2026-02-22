@@ -1693,7 +1693,9 @@ fruits.forEach((fruits) => {
   box.textContent = fruits;
   container.appendChild(box);
 });
-function randomFruit() {
+function randomFruit(button) {
+  button.disabled = true;
+  button.textContent = 'Крутится...';
   let randomNum = Math.round(Math.random() * 4);
   console.log(randomNum);
   const foundindex = 0;
@@ -1703,7 +1705,7 @@ function randomFruit() {
     }
   });
   const items = 4;
-  const size = 100;
+  const size = 150;
   const spins = 9;
   //5*4=20 выбрали середину
   //20*100=2000 px
@@ -1712,20 +1714,20 @@ function randomFruit() {
 
   let offset = 0;
   if (randomNum === 2 || randomNum === 3) {
-    offset = 600 - (spins * items * size + randomNum * size) + -80;
+    offset = 900 - (spins * items * size + randomNum * size) + -120;
   }
   if (randomNum === 0 || randomNum === 1) {
-    offset = 600 - (spins * items * size + randomNum * size) + 30;
+    offset = 900 - (spins * items * size + randomNum * size) + 45;
   }
   if (randomNum === 4) {
-    offset = 600 - (spins * items * size + randomNum * size) + -30;
+    offset = 900 - (spins * items * size + randomNum * size) + -45;
   }
   console.log(offset);
   const start = randomNum * 100;
   container.style.transition = 'transform 4s cubic-bezier(0.34, 1.56, 0.64, 1)';
   container.style.transform = `translateX(${offset}px)`;
   setTimeout(() => {
-    const finalOffset = 600 - (spins * items * size + randomNum * size);
+    const finalOffset = 900 - (spins * items * size + randomNum * size);
     container.style.transition =
       'transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
     container.style.transform = `translateX(${finalOffset}px)`;
@@ -1752,10 +1754,14 @@ function randomFruit() {
         container.style.transition = 'none';
         container.style.transform = `translateX(${-300}px)`;
         // fruit1.style.transform = `translateX(${0}px)`;
+        button.disabled = false;
+        button.textContent = 'Крутить';
       });
       CloseGifts2.addEventListener('click', () => {
         container.style.transition = 'none';
         container.style.transform = `translateX(${-300}px)`;
+        button.disabled = false;
+        button.textContent = 'Крутить';
       });
     }
   });
