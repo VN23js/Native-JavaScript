@@ -1704,7 +1704,7 @@ function randomFruit(button) {
       console.log(index, item);
     }
   });
-  const items = 4;
+  const items = 4; // here 5//Crutch
   const size = 150;
   const spins = 9;
   //5*4=20 выбрали середину
@@ -1714,20 +1714,20 @@ function randomFruit(button) {
 
   let offset = 0;
   if (randomNum === 2 || randomNum === 3) {
-    offset = 900 - (spins * items * size + randomNum * size) + -120;
+    offset = 900 - (spins * items * size + randomNum * size) + -120; //Crutch
   }
   if (randomNum === 0 || randomNum === 1) {
-    offset = 900 - (spins * items * size + randomNum * size) + 45;
+    offset = 900 - (spins * items * size + randomNum * size) + 45; //Crutch
   }
   if (randomNum === 4) {
-    offset = 900 - (spins * items * size + randomNum * size) + -45;
+    offset = 900 - (spins * items * size + randomNum * size) + -45; //Crutch
   }
   console.log(offset);
   const start = randomNum * 100;
   container.style.transition = 'transform 4s cubic-bezier(0.34, 1.56, 0.64, 1)';
   container.style.transform = `translateX(${offset}px)`;
   setTimeout(() => {
-    const finalOffset = 900 - (spins * items * size + randomNum * size);
+    const finalOffset = 900 - (spins * items * size + randomNum * size); //Crutch
     container.style.transition =
       'transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
     container.style.transform = `translateX(${finalOffset}px)`;

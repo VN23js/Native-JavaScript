@@ -205,9 +205,6 @@ p {
 .fruit-container {
   display: flex;
   transition: transform 1s ease-out;
-  left: 100px;
-
-  position: absolute;
 }
 .row-content {
   --bs-gutter-x: 1.5rem;
@@ -278,7 +275,7 @@ p {
   display: flex;
   transition: transform 2s ease-out;
   position: absolute;
-  left: 0;
+
   top: 26px;
   padding: 0 calc(50% - 75px);
   transform: translateX(-300px);
@@ -288,4 +285,8 @@ p {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+.ron {
+  grid-template-columns: 1fr 2fr 1fr;
+  display: grid;
 }
